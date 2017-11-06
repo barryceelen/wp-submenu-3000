@@ -16,7 +16,7 @@
 	</rule>
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="submenu-3000"/>
+			<property name="text_domain" type="array" value="submenu-3000,default"/>
 		</properties>
 	</rule>
 	<rule ref="WordPress.WP.DeprecatedFunctions">

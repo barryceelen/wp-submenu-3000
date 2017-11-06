@@ -7,7 +7,7 @@ Automatically add submenu items to hierarchical post type menu items if no subme
 Include or ignore specific menus via a filter:
 
 ```
-add_filter( 'submenu_3000', 'prefix_my_cool_filter', 10, 4 );
+add_filter( 'submenu_3000', 'prefix_filter_submenu_3000', 10, 4 );
 
 /**
  * Only add submenu items to a specific theme location.
@@ -17,7 +17,7 @@ add_filter( 'submenu_3000', 'prefix_my_cool_filter', 10, 4 );
  * @param int      $depth       Depth of menu item. Used for padding.
  * @param stdClass $args        An object of wp_nav_menu() arguments.
  */
-function prefix_my_cool_filter( $item_output, $item, $depth, $args ) {
+function prefix_filter_submenu_3000( $item_output, $item, $depth, $args ) {
 
 	if ( 'primary' !== $args->theme_location ) {
 		return false;

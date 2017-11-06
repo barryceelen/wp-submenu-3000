@@ -48,7 +48,7 @@ function submenu_3000_filter_nav_menu_item( $item_output, $item, $depth, $args )
 
 	require_once( 'class-submenu-3000-walker.php' );
 
-	$walker = new Submenu_3000_Walker;
+	$walker = new Submenu_3000_Walker();
 
 	$submenu = wp_list_pages( array(
 		'child_of'    => $item->object_id,

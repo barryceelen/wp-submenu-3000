@@ -101,7 +101,7 @@ class Submenu_3000_Walker extends Walker_Page {
 			'menu-item',
 			'menu-item-type-post_type',
 			'menu-item-object-' . esc_attr( $post->post_type ),
-			'menu-item-' . (int) $post->ID
+			'menu-item-' . (int) $post->ID,
 		);
 
 		if ( 'page' === $post->post_type ) {

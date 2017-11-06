@@ -52,7 +52,7 @@ function submenu_3000_filter_nav_menu_item( $item_output, $item, $depth, $args )
 
 	$submenu = wp_list_pages( array(
 		'child_of'    => $item->object_id,
-		'depth'       => 0 === $args->depth ? 0 : ($args->depth - $depth) + 1,
+		'depth'       => 0 === $args->depth ? 0 : ( $args->depth - $depth ) + 1,
 		'echo'        => false,
 		'post_type'   => $item->object,
 		'sort_column' => 'menu_order, post_title',

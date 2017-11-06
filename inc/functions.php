@@ -66,7 +66,7 @@ function submenu_3000_filter_nav_menu_item( $item_output, $item, $depth, $args )
 		$classes = array( 'sub-menu' );
 
 		/** This filter is documented in includes/class-submenu-3000-walker.php */
-		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) ); // WPCS: prefix ok.
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		$item_output = $item_output . "<ul $class_names>" . $submenu . '</ul>';

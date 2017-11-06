@@ -126,7 +126,7 @@ class Submenu_3000_Walker extends Walker_Page {
 			} elseif ( $_current_page && $post->ID == $_current_page->post_parent ) {
 				$css_class[] = 'current-page-parent';
 			}
-		} elseif ( $post->ID == get_option('page_for_posts') ) {
+		} elseif ( (int) get_option( 'page_for_posts' ) === (int) $post->ID ) {
 			$css_class[] = 'current-page-parent';
 		}
 

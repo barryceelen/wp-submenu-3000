@@ -148,7 +148,7 @@ class Submenu_3000_Walker extends Walker_Page {
 
 		if ( '' === $post->post_title ) {
 			/* translators: %d: ID of a post */
-			$post->post_title = sprintf( __( '#%d (no title)' ), $post->ID );
+			$post->post_title = sprintf( __( '#%d (no title)', 'default' ), $post->ID );
 		}
 
 		$args['link_before'] = empty( $args['link_before'] ) ? '' : $args['link_before'];

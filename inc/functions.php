@@ -30,7 +30,7 @@ function submenu_3000_filter_nav_menu_item( $item_output, $item, $depth, $args )
 	 * @param int      $depth       Depth of menu item. Used for padding.
 	 * @param stdClass $args        An object of wp_nav_menu() arguments.
 	 */
-	if ( apply_filters( 'submenu_3000', false, $item_output, $item, $depth, $args ) ) {
+	if ( ! apply_filters( 'submenu_3000', $item_output, $item, $depth, $args ) ) {
 		return $item_output;
 	}
 

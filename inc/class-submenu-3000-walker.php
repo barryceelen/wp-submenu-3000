@@ -10,7 +10,10 @@
  */
 
 /**
- * Core walker class used to create an HTML list of pages.
+ * Walker class used to create an HTML list of menu items.
+ *
+ * Based on the core page walker class, slightly adapted to get the
+ * proper class names for the menu items.
  *
  * @since 1.0.0
  *

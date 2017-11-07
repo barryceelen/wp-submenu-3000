@@ -4,7 +4,7 @@
 
 Automatically add submenu items to hierarchical post type menu items if no submenu item is set.
 
-Include or ignore specific menus via a filter:
+The plugin acts on all menus. Include or ignore specific menus via a filter:
 
 ```
 add_filter( 'submenu_3000', 'prefix_filter_submenu_3000', 10, 4 );
@@ -24,3 +24,5 @@ function prefix_filter_submenu_3000( $item_output, $item, $depth, $args ) {
 	}
 }
 ```
+
+[Read More](https://cobbledco.de/automatically-add-submenu-items/)

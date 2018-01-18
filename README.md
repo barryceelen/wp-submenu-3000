@@ -2,9 +2,11 @@
 
 [![Build Status](https://travis-ci.org/barryceelen/wp-submenu-3000.svg?branch=master)](https://travis-ci.org/barryceelen/wp-submenu-3000)
 
-Automatically add submenu items to hierarchical post type menu items if no submenu item is set.
+If no submenu item is explicitly set, this plugin automatically adds submenu items if the menu item points to a hierarchical post type.
 
-The plugin acts on all menus. Include or ignore specific menus via a filter:
+The plugin acts on all menus and respects the 'depth' option.
+
+Include or ignore specific menus via a filter:
 
 ```
 add_filter( 'submenu_3000', 'prefix_filter_submenu_3000', 10, 4 );
@@ -25,4 +27,4 @@ function prefix_filter_submenu_3000( $item_output, $item, $depth, $args ) {
 }
 ```
 
-[Read More](https://cobbledco.de/automatically-add-submenu-items/)
+[Blog Post](https://cobbledco.de/automatically-add-submenu-items/)

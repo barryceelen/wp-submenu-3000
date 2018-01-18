@@ -80,12 +80,10 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param array $atts {
 		 *     The HTML attributes applied to the submenu `<ul>` element, empty strings are ignored.
 		 * }
-		 * @param WP_Post $post         Post data object.
-		 * @param int     $depth        Depth of post, used for padding.
-		 * @param array   $args         An array of arguments.
-		 * @param int     $current_page ID of the current post.
+		 * @param array $args  An array of arguments.
+		 * @param int   $depth Depth of item, used for padding.
 		 */
-		$atts = apply_filters( 'submenu_3000_submenu_attributes', $atts, $post, $depth, $args, $current_page );
+		$atts = apply_filters( 'submenu_3000_submenu_attributes', $atts, $args, $depth );
 
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {

@@ -89,7 +89,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param int      $depth    Depth of menu item. Used for padding.
 		 * @param string   $menu_id  Menu ID.
 		 */
-		$class_names = join( ' ', apply_filters( 'submenu_3000_submenu_css_class', $classes, $args, $depth, $this->menu_id ) ); // WPCS: prefix ok.
+		$class_names = join( ' ', apply_filters( 'submenu_3000_submenu_css_class', $classes, $args, $depth, $this->menu_id ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		$atts = array();
@@ -100,7 +100,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @since 1.0.0
 		 *
 		 * @param array $atts {
-		 *     The HTML attributes applied to the submenu `<ul>` element, empty strings are ignored.
+		 *     The HTML attributes applied to the submenu `<ul>` element.
 		 * }
 		 * @param array  $args    An array of arguments.
 		 * @param int    $depth   Depth of item, used for padding.
@@ -116,7 +116,7 @@ class Submenu_3000_Walker extends Walker_Page {
 			}
 		}
 
-		$output .= "{$n}{$indent}<ul {$class_names}{$attributes}>{$n}";
+		$output .= "{$n}{$indent}<ul{$class_names}{$attributes}>{$n}";
 	}
 
 	/**
@@ -186,7 +186,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		 *
 		 * @see wp_list_pages()
 		 *
-		 * @param array   $css_class    An array of CSS classes to be applied
+		 * @param array   $css_classes  An array of CSS classes to be applied
 		 *                              to each list item.
 		 * @param WP_Post $post         Post data object.
 		 * @param int     $depth        Depth of post, used for padding.

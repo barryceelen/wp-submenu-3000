@@ -60,16 +60,52 @@ function submenu_3000_filter_nav_menu_item( $item_output, $item, $depth, $args )
 		'walker'      => $walker,
 	) );
 
+	/*
+	 * Todo: This sucks:
+	 */
 	if ( ! empty( $submenu ) ) {
 
 		// Default class.
 		$classes = array( 'sub-menu' );
 
-		/** This filter is documented in includes/class-submenu-3000-walker.php */
-		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) ); // WPCS: prefix ok.
+		/**
+		 * Filters the CSS classes for the first submenu <ul> element.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array    $classes  The CSS classes that are applied to the menu `<ul>` element.
+		 * @param stdClass $args     An object of `wp_nav_menu()` arguments.
+		 * @param int      $depth    Depth of menu item.
+		 * @param string   $menu_id  Menu ID.
+		 */
+		$class_names = join( ' ', apply_filters( 'submenu_3000_menu_css_class', $classes, $args, $depth, $args->menu_id ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-		$item_output = $item_output . "<ul $class_names>" . $submenu . '</ul>';
+		$atts = array();
+
+		/**
+		 * Filters he HTML attributes for the first submenu <ul> element.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $atts {
+		 *     The HTML attributes applied to the submenu `<ul>` element.
+		 * }
+		 * @param array  $args    An array of arguments.
+		 * @param int    $depth   Depth of item, used for padding.
+		 * @param string $menu_id Menu ID.
+		 */
+		$atts = apply_filters( 'submenu_3000_menu_attributes', $atts, $args, $depth, $args->menu_id );
+
+		$attributes = '';
+		foreach ( $atts as $attr => $value ) {
+			if ( ! empty( $value ) ) {
+				$value = esc_attr( $value );
+				$attributes .= ' ' . $attr . '="' . $value . '"';
+			}
+		}
+
+		$item_output = $item_output . "<ul {$class_names}{$attributes}>" . $submenu . '</ul>';
 	}
 
 	return $item_output;

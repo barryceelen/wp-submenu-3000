@@ -12,6 +12,8 @@
 /**
  * Add submenu items to menu items that do not already have submenu items set.
  *
+ * Todo: Add 'menu-item-has-children' class to menu item.
+ *
  * @since 1.0.0
  * @param string   $item_output The menu item's starting HTML output.
  * @param WP_Post  $item        Menu item data object.

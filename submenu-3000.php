@@ -11,7 +11,7 @@
  * Plugin Name:       Submenu 3000
  * Plugin URI:        https://github.com/barryceelen/wp-submenu-3000
  * Description:       Automatically add submenu items to navigation menu items.
- * Version:           1.0.0
+ * Version:           2.0.0
  * Author:            Barry Ceelen
  * Author URI:        https://github.com/barryceelen
  * Text Domain:       submenu-3000

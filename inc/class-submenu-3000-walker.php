@@ -10,7 +10,10 @@
  */
 
 /**
- * Core walker class used to create an HTML list of pages.
+ * Walker class used to create an HTML list of menu items.
+ *
+ * Based on the core page walker class, slightly adapted to get the
+ * proper class names for the menu items.
  *
  * @since 1.0.0
  *
@@ -64,7 +67,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param stdClass $args    An object of `wp_nav_menu()` arguments.
 		 * @param int      $depth   Depth of menu item. Used for padding.
 		 */
-		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) ); // WPCS: prefix ok.
+		$class_names = join( ' ', apply_filters( 'submenu_3000_css_class', $classes, $args, $depth ) ); // WPCS: prefix ok.
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		$output .= "{$n}{$indent}<ul $class_names>{$n}";
@@ -131,7 +134,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		}
 
 		/**
-		 * Filters the list of CSS classes to include with each page item in the list.
+		 * Filters the list of CSS classes to include with each item in the list.
 		 *
 		 * @since 1.0.0
 		 *
@@ -144,7 +147,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param array   $args         An array of arguments.
 		 * @param int     $current_page ID of the current post.
 		 */
-		$css_classes = implode( ' ', apply_filters( 'submenu_3000_css_class', $css_class, $post, $depth, $args, $current_page ) );
+		$css_classes = implode( ' ', apply_filters( 'submenu_3000_item_css_class', $css_class, $post, $depth, $args, $current_page ) );
 
 		if ( '' === $post->post_title ) {
 			/* translators: %d: ID of a post */

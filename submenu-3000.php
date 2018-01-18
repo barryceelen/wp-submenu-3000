@@ -14,7 +14,7 @@
  * Version:           1.0.0
  * Author:            Barry Ceelen
  * Author URI:        https://github.com/barryceelen
- * Text Domain:       subnav-3000
+ * Text Domain:       submenu-3000
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Domain Path:       /languages

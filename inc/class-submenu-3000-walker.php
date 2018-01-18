@@ -76,9 +76,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @since 1.0.0
 		 *
 		 * @param array $atts {
-		 *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
-		 *
-		 *     @type string $href The href attribute.
+		 *     The HTML attributes applied to the submenu `<ul>` element, empty strings are ignored.
 		 * }
 		 * @param WP_Post $post         Post data object.
 		 * @param int     $depth        Depth of post, used for padding.

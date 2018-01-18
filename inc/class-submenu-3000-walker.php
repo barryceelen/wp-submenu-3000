@@ -33,7 +33,7 @@ class Submenu_3000_Walker extends Walker_Page {
 	public $tree_type = 'post_type';
 
 	/**
-	 * Nav menu location.
+	 * Nav menu ID.
 	 *
 	 * @since 2.1.0
 	 * @access public
@@ -41,16 +41,16 @@ class Submenu_3000_Walker extends Walker_Page {
 	 *
 	 * @see Walker::$tree_type
 	 */
-	private $location;
+	private $menu_id;
 
 	/**
 	 * Initialize class.
 	 *
 	 * @since 1.0.0
-	 * @param string $location Navigation menu location.
+	 * @param string $menu_id Navigation menu ID.
 	 */
-	public function __construct( $location = '' ) {
-		$this->location = $location;
+	public function __construct( $menu_id = '' ) {
+		$this->menu_id = $menu_id;
 	}
 
 	/**
@@ -87,9 +87,9 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param array    $classes  The CSS classes that are applied to the menu `<ul>` element.
 		 * @param stdClass $args     An object of `wp_nav_menu()` arguments.
 		 * @param int      $depth    Depth of menu item. Used for padding.
-		 * @param string   $location Menu location.
+		 * @param string   $menu_id  Menu ID.
 		 */
-		$class_names = join( ' ', apply_filters( 'submenu_3000_submenu_css_class', $classes, $args, $depth, $this->location ) ); // WPCS: prefix ok.
+		$class_names = join( ' ', apply_filters( 'submenu_3000_submenu_css_class', $classes, $args, $depth, $this->menu_id ) ); // WPCS: prefix ok.
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 		$atts = array();
@@ -102,11 +102,11 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param array $atts {
 		 *     The HTML attributes applied to the submenu `<ul>` element, empty strings are ignored.
 		 * }
-		 * @param array $args  An array of arguments.
-		 * @param int   $depth Depth of item, used for padding.
-		 * @param string   $location Menu location.
+		 * @param array  $args    An array of arguments.
+		 * @param int    $depth   Depth of item, used for padding.
+		 * @param string $menu_id Menu ID.
 		 */
-		$atts = apply_filters( 'submenu_3000_submenu_attributes', $atts, $args, $depth, $this->location );
+		$atts = apply_filters( 'submenu_3000_submenu_attributes', $atts, $args, $depth, $this->menu_id );
 
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {
@@ -192,9 +192,9 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param int     $depth        Depth of post, used for padding.
 		 * @param array   $args         An array of arguments.
 		 * @param int     $current_page ID of the current post.
-		 * @param string  $location     Menu location.
+		 * @param string  $menu_id      Menu ID.
 		 */
-		$css_classes = implode( ' ', apply_filters( 'submenu_3000_item_css_class', $css_class, $post, $depth, $args, $current_page, $this->location ) );
+		$css_classes = implode( ' ', apply_filters( 'submenu_3000_item_css_class', $css_class, $post, $depth, $args, $current_page, $this->menu_id ) );
 
 		if ( '' === $post->post_title ) {
 			/* translators: %d: ID of a post */
@@ -221,9 +221,9 @@ class Submenu_3000_Walker extends Walker_Page {
 		 * @param int     $depth        Depth of post, used for padding.
 		 * @param array   $args         An array of arguments.
 		 * @param int     $current_page ID of the current post.
-		 * @param string  $location     Menu location.
+		 * @param string  $menu_id      Menu ID.
 		 */
-		$atts = apply_filters( 'submenu_3000_menu_link_attributes', $atts, $post, $depth, $args, $current_page, $this->location );
+		$atts = apply_filters( 'submenu_3000_menu_link_attributes', $atts, $post, $depth, $args, $current_page, $this->menu_id );
 
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {

@@ -70,6 +70,8 @@ class Submenu_3000_Walker extends Walker_Page {
 		$class_names = join( ' ', apply_filters( 'submenu_3000_submenu_css_class', $classes, $args, $depth ) ); // WPCS: prefix ok.
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
+		$atts = array();
+
 		/**
 		 * Filters he HTML attributes for a submenu <ul> element.
 		 *

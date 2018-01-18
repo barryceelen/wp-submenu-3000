@@ -29,8 +29,7 @@ function prefix_filter_submenu_3000( $item_output, $item, $depth, $args ) {
 ## Filter css classes and link attributes
 
 - Filter the CSS class(es) applied to a menu list: `submenu_3000_css_class`
-- Filters the list of CSS classes to add to each item in the list: `submenu_3000_item_css_class`
+- Filter the list of CSS classes to add to each item in the list: `submenu_3000_item_css_class`
 - Filter the HTML attributes applied to a menu item's anchor: `submenu_3000_menu_link_attributes`
-- menu item: `submenu_3000_item_css_class`
 
 [Read More](https://cobbledco.de/automatically-add-submenu-items/)

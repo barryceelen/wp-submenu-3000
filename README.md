@@ -26,7 +26,7 @@ function prefix_filter_submenu_3000( $item_output, $item, $depth, $args ) {
 }
 ```
 
-## Filter css classes and link attributes
+## Filter CSS classes and link attributes
 
 - Filter the CSS classes for a submenu &lt;ul&gt; element: `submenu_3000_css_class`
 - Filter the CSS classes for a submenu item &lt;li&gt; element: `submenu_3000_item_css_class`

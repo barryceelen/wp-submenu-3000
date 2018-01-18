@@ -5,8 +5,7 @@
 If no submenu item is explicitly set, this plugin automatically adds submenu items if the menu item points to a hierarchical post type.
 
 The plugin acts on all menus and respects the 'depth' option.
-
-Include or ignore specific menus via a filter:
+To disable the plugin for a specific menu, add a filter:
 
 ```
 add_filter( 'submenu_3000', 'prefix_filter_submenu_3000', 10, 4 );

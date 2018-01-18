@@ -43,8 +43,14 @@ class Submenu_3000_Walker extends Walker_Page {
 	 */
 	private $location;
 
+	/**
+	 * Initialize class.
+	 *
+	 * @since 1.0.0
+	 * @param string $location Navigation menu location.
+	 */
 	public function __construct( $location = '' ) {
-	    $this->location = $location;
+		$this->location = $location;
 	}
 
 	/**
@@ -74,7 +80,7 @@ class Submenu_3000_Walker extends Walker_Page {
 		$classes = array( 'sub-menu' );
 
 		/**
-		 * the CSS classes for a submenu <ul> element.
+		 * Filters the CSS classes for a submenu <ul> element.
 		 *
 		 * @since 1.0.0
 		 *
